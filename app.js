@@ -97,3 +97,4 @@ app.delete("/posts/:id",(req,res)=>{
 app.listen(port, () => {
     console.log(`app is listening on port ${port} by sagar`);
 })
+
