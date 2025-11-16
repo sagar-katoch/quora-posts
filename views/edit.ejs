@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit form</title>
+    <title>Edit Form</title>
 </head>
 <body>
-    <h2>Edit your post</h2>
-    <p>post id: <%= post.id%></p>
-    <p>post username:@<%= post.username%></p>
+    <h2>Edit Post</h2>
 
-   <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
-<textarea rows="10" cols="35" name="content" id="content"><%=post.content %></textarea>
-<button>submit</button>
+    <p>Post ID: <%= post.id %></p>
+    <p>Username: @<%= post.username %></p>
 
-   </form>
+    <form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+        <textarea rows="10" cols="40" name="content"><%= post.content %></textarea>
+        <br><br>
+        <button>Save Changes</button>
+    </form>
+
+    <br>
+    <a href="/posts">Go Back</a>
 </body>
 </html>
